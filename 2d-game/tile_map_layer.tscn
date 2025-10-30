@@ -1,6 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://t7fg53i00jlc"]
+[gd_scene load_steps=4 format=4 uid="uid://t7fg53i00jlc"]
 
-[sub_resource type="TileSet" id="TileSet_g245i"]
+[ext_resource type="Texture2D" uid="uid://bljexxbs0iphe" path="res://Assets/DarkCastleTileset/CastleWallsInner.png" id="1_0ugm7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vqaso"]
+texture = ExtResource("1_0ugm7")
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
+
+[sub_resource type="TileSet" id="TileSet_uuaxm"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_vqaso")
 
 [node name="TileMapLayer" type="TileMapLayer"]
-tile_set = SubResource("TileSet_g245i")
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAD9/wAAAAABAAMAAAD9/wEAAAABAAQAAAD9/wIAAAABAAUAAAD+/wAAAAACAAMAAAD+/wEAAAACAAQAAAD+/wIAAAACAAUAAAD//wAAAAADAAMAAAD//wEAAAADAAQAAAD//wIAAAADAAUAAAAAAAAAAAABAAMAAAAAAAEAAAABAAQAAAAAAAIAAAABAAUAAAABAAAAAAACAAMAAAABAAEAAAACAAQAAAABAAIAAAACAAUAAAACAAAAAAADAAMAAAACAAEAAAADAAQAAAACAAIAAAADAAUAAAADAAAAAAABAAMAAAADAAEAAAABAAQAAAADAAIAAAABAAUAAAAEAAAAAAACAAMAAAAEAAEAAAACAAQAAAAEAAIAAAACAAUAAAAFAAAAAAADAAMAAAAFAAEAAAADAAQAAAAFAAIAAAADAAUAAAD6/wAAAAABAAMAAAD6/wEAAAABAAQAAAD6/wIAAAABAAUAAAD7/wAAAAACAAMAAAD7/wEAAAACAAQAAAD7/wIAAAACAAUAAAD8/wAAAAADAAMAAAD8/wEAAAADAAQAAAD8/wIAAAADAAUAAAD3/wAAAAABAAMAAAD3/wEAAAABAAQAAAD3/wIAAAABAAUAAAD4/wAAAAACAAMAAAD4/wEAAAACAAQAAAD4/wIAAAACAAUAAAD5/wAAAAADAAMAAAD5/wEAAAADAAQAAAD5/wIAAAADAAUAAAAGAAAAAAABAAMAAAAGAAEAAAABAAQAAAAGAAIAAAABAAUAAAAHAAAAAAACAAMAAAAHAAEAAAACAAQAAAAHAAIAAAACAAUAAAAIAAAAAAADAAMAAAAIAAEAAAADAAQAAAAIAAIAAAADAAUAAAA=")
+tile_set = SubResource("TileSet_uuaxm")
