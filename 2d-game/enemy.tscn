@@ -27,5 +27,5 @@ shape = SubResource("RectangleShape2D_4gyqm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qi2p4")
 
-[connection signal="body_entered" from="Wind" to="." method="_on_DetectionRadius_body_entered"]
-[connection signal="body_exited" from="Wind" to="." method="_on_DetectionRadius_body_exited"]
+[connection signal="body_entered" from="Wind" to="." method="_on_wind_body_entered"]
+[connection signal="body_exited" from="Wind" to="." method="_on_wind_body_exited"]
