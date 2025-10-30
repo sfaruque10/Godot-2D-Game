@@ -3,36 +3,61 @@ extends CharacterBody2D
 @export var speed = 500
 @export var dash_speed = 1200
 @export var gravity = 30
+<<<<<<< Updated upstream
 @export var jump_force = 1000
+=======
+@export var jump_force = 700
+>>>>>>> Stashed changes
 @export var dash_jump = 1000
 
 var jumps = 0
 var max_jumps = 2
 var is_dashing = false
 var dash_direction = 0
+<<<<<<< Updated upstream
 var external_velocity = Vector2.ZERO
 
 #var gravity_direction = 1 # normal gravity or flipped gravity
+=======
+var gravity_direction = 1 # normal gravity or flipped gravity
+>>>>>>> Stashed changes
 
 func _physics_process(_delta: float) -> void:
 	velocity += external_velocity
 	external_velocity *= 0.95
 	if is_dashing:
+<<<<<<< Updated upstream
 		velocity.x = dash_speed * dash_direction * Global.gravity_direction
 	else:
 		if (!is_on_floor() and Global.gravity_direction == 1) or (!is_on_ceiling() and Global.gravity_direction == -1): # make player fall to ground
 			velocity.y += gravity * Global.gravity_direction
 			if abs(velocity.y) > 1000:
 				velocity.y = 1000 * Global.gravity_direction
+=======
+		velocity.x = dash_speed * dash_direction * gravity_direction
+	else:
+		if (!is_on_floor() and gravity_direction == 1) or (!is_on_ceiling() and gravity_direction == -1): # make player fall to ground
+			velocity.y += gravity * gravity_direction
+			if abs(velocity.y) > 1000:
+				velocity.y = 1000 * gravity_direction
+>>>>>>> Stashed changes
 		else:
 			jumps = 0 # reset number of jumps
 		
 		if Input.is_action_just_pressed("jump") and jumps < max_jumps:
+<<<<<<< Updated upstream
 			velocity.y = -jump_force * Global.gravity_direction
 			jumps += 1 # increment number of jumps
 			
 		var direction = Input.get_axis("ui_left", "ui_right")
 		velocity.x = speed * direction * Global.gravity_direction
+=======
+			velocity.y = -jump_force * gravity_direction
+			jumps += 1 # increment number of jumps
+			
+		var direction = Input.get_axis("ui_left", "ui_right")
+		velocity.x = speed * direction * gravity_direction
+>>>>>>> Stashed changes
 		
 		# press shift while holding arrow key
 		if Input.is_action_just_pressed("dash"): # dash
@@ -42,7 +67,11 @@ func _physics_process(_delta: float) -> void:
 				is_dashing = true
 				$Timer.start()
 			elif dir == 0 and jumps < max_jumps: # dash jump
+<<<<<<< Updated upstream
 				velocity.y = -dash_jump * Global.gravity_direction
+=======
+				velocity.y = -dash_jump * gravity_direction
+>>>>>>> Stashed changes
 				jumps += 1
 	
 	move_and_slide()
