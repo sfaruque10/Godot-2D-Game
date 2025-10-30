@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://4oovtax3voq0"]
+
+[ext_resource type="Script" uid="uid://dsh2p1sad3u2w" path="res://enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://bpvi3lfu530w" path="res://icon.svg" id="1_7k104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(794, 127)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qi2p4"]
+radius = 62.0
+height = 130.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
+script = ExtResource("1_4gyqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.7491611, 0.15404236, 0, 1)
+texture = ExtResource("1_7k104")
+
+[node name="Wind" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wind"]
+shape = SubResource("RectangleShape2D_4gyqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qi2p4")
+
+[connection signal="body_entered" from="Wind" to="." method="_on_DetectionRadius_body_entered"]
+[connection signal="body_exited" from="Wind" to="." method="_on_DetectionRadius_body_exited"]

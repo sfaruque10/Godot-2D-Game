@@ -10,9 +10,13 @@ var jumps = 0
 var max_jumps = 2
 var is_dashing = false
 var dash_direction = 0
+var external_velocity = Vector2.ZERO
+
 #var gravity_direction = 1 # normal gravity or flipped gravity
 
 func _physics_process(_delta: float) -> void:
+	velocity += external_velocity
+	external_velocity *= 0.95
 	if is_dashing:
 		velocity.x = dash_speed * dash_direction * Global.gravity_direction
 	else:
@@ -45,6 +49,9 @@ func _physics_process(_delta: float) -> void:
 	
 func _on_timer_timeout() -> void:
 	is_dashing = false
+
+func apply_wind(force_vector):
+	external_velocity += force_vector
 
 
 #func _on_ending_platform_body_entered(body: Node2D) -> void:
