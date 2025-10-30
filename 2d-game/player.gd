@@ -7,7 +7,9 @@ extends CharacterBody2D
 @export var dash_jump = 1000
 
 var jumps = 0
-var max_jumps = 2
+var dashes = 0
+var max_dashes = 1
+var max_jumps = 1
 var is_dashing = false
 var dash_direction = 0
 #var gravity_direction = 1 # normal gravity or flipped gravity
@@ -15,6 +17,7 @@ var dash_direction = 0
 func _physics_process(_delta: float) -> void:
 	if is_dashing:
 		velocity.x = dash_speed * dash_direction * Global.gravity_direction
+		velocity.y = 0
 	else:
 		if (!is_on_floor() and Global.gravity_direction == 1) or (!is_on_ceiling() and Global.gravity_direction == -1): # make player fall to ground
 			velocity.y += gravity * Global.gravity_direction
@@ -22,6 +25,7 @@ func _physics_process(_delta: float) -> void:
 				velocity.y = 1000 * Global.gravity_direction
 		else:
 			jumps = 0 # reset number of jumps
+			dashes = 0 # reset number of dashes
 		
 		if Input.is_action_just_pressed("jump") and jumps < max_jumps:
 			velocity.y = -jump_force * Global.gravity_direction
@@ -31,15 +35,17 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = speed * direction * Global.gravity_direction
 		
 		# press shift while holding arrow key
-		if Input.is_action_just_pressed("dash"): # dash
+		if Input.is_action_just_pressed("dash") and Global.has_dash == true and dashes < max_dashes: # dash
 			var dir = Input.get_axis("ui_left", "ui_right")
 			if dir != 0: # if not standing in place
 				dash_direction = dir
 				is_dashing = true
 				$Timer.start()
-			elif dir == 0 and jumps < max_jumps: # dash jump
-				velocity.y = -dash_jump * Global.gravity_direction
-				jumps += 1
+				dashes += 1
+			#elif dir == 0 and jumps < max_jumps: # dash jump
+				#velocity.y = -dash_jump * Global.gravity_direction
+				#jumps += 1
+				#dashes += 1
 	
 	move_and_slide()
 	
