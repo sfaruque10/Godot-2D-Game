@@ -8,8 +8,6 @@ extends CharacterBody2D
 
 var jumps = 0
 var dashes = 0
-var max_dashes = 1
-var max_jumps = 1
 var is_dashing = false
 var dash_direction = 0
 #var gravity_direction = 1 # normal gravity or flipped gravity
@@ -27,7 +25,7 @@ func _physics_process(_delta: float) -> void:
 			jumps = 0 # reset number of jumps
 			dashes = 0 # reset number of dashes
 		
-		if Input.is_action_just_pressed("jump") and jumps < max_jumps:
+		if Input.is_action_just_pressed("jump") and jumps < Global.max_jumps:
 			velocity.y = -jump_force * Global.gravity_direction
 			jumps += 1 # increment number of jumps
 			
@@ -35,7 +33,7 @@ func _physics_process(_delta: float) -> void:
 		velocity.x = speed * direction * Global.gravity_direction
 		
 		# press shift while holding arrow key
-		if Input.is_action_just_pressed("dash") and Global.has_dash == true and dashes < max_dashes: # dash
+		if Input.is_action_just_pressed("dash") and Global.has_dash == true and dashes < Global.max_dashes: # dash
 			var dir = Input.get_axis("ui_left", "ui_right")
 			if dir != 0: # if not standing in place
 				dash_direction = dir
