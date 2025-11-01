@@ -11,6 +11,8 @@ var max_jumps = 2
 var is_dashing = false
 var dash_direction = 0
 var external_velocity = Vector2.ZERO
+var external_force: Vector2 = Vector2.ZERO
+
 #var gravity_direction = 1 # normal gravity or flipped gravity
 
 func _physics_process(_delta: float) -> void:
@@ -33,6 +35,8 @@ func _physics_process(_delta: float) -> void:
 		var direction = Input.get_axis("ui_left", "ui_right")
 		velocity.x = speed * direction * Global.gravity_direction
 		
+		velocity += external_force
+		
 		# press shift while holding arrow key
 		if Input.is_action_just_pressed("dash"): # dash
 			var dir = Input.get_axis("ui_left", "ui_right")
@@ -45,6 +49,7 @@ func _physics_process(_delta: float) -> void:
 				jumps += 1
 	
 	move_and_slide()
+	external_force = Vector2.ZERO
 	
 func _on_timer_timeout() -> void:
 	is_dashing = false
@@ -52,6 +57,9 @@ func _on_timer_timeout() -> void:
 func apply_wind(force_vector):
 	external_velocity += force_vector
 
+	
+func wind_push(force_amount: float):
+	external_force.x = force_amount
 
 #func _on_ending_platform_body_entered(body: Node2D) -> void:
 	#print(get_groups())
