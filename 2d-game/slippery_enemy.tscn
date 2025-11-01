@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://btvcl3jso720t"]
+
+[ext_resource type="Texture2D" uid="uid://bpvi3lfu530w" path="res://icon.svg" id="1_1nm4i"]
+[ext_resource type="Script" uid="uid://b3w3mq01yibaf" path="res://slippery_enemy.gd" id="1_5lclq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nm4i"]
+size = Vector2(583, 12)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lclq"]
+radius = 64.0
+height = 128.0
+
+[node name="Slippery_Enemy" type="CharacterBody2D"]
+script = ExtResource("1_5lclq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.043137256, 0.13725491, 0.43137255, 1)
+texture = ExtResource("1_1nm4i")
+
+[node name="Slippery_Surface" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface"]
+position = Vector2(0, 73)
+shape = SubResource("RectangleShape2D_1nm4i")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_5lclq")
+
+[connection signal="body_entered" from="Slippery_Surface" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Slippery_Surface" to="." method="_on_body_exited"]

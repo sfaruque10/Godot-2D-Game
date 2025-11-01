@@ -1,12 +1,17 @@
-[gd_scene load_steps=16 format=3 uid="uid://dlncbqssqv1kr"]
+[gd_scene load_steps=19 format=3 uid="uid://dlncbqssqv1kr"]
 
 [ext_resource type="PackedScene" uid="uid://dtqiwfgfbnvf0" path="res://player.tscn" id="1_atsvf"]
 [ext_resource type="Script" uid="uid://b5u0bvy1s77yt" path="res://ending_platform.gd" id="2_f53ul"]
-[ext_resource type="Script" uid="uid://b2dykq030im28" path="res://dash_checkpoint.gd" id="3_q5v5t"]
+[ext_resource type="PackedScene" uid="uid://bb1lbkktqm77h" path="res://wind_enemy.tscn" id="3_q5v5t"]
+[ext_resource type="PackedScene" uid="uid://btvcl3jso720t" path="res://slippery_enemy.tscn" id="4_6hoih"]
+[ext_resource type="Script" uid="uid://b2dykq030im28" path="res://dash_checkpoint.gd" id="4_m7qo6"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_q5v5t"]
 a = Vector2(3223, 0)
 b = Vector2(-3260, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_davks"]
+size = Vector2(6434, 104)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3wiy"]
 size = Vector2(200, 5239.5)
@@ -60,6 +65,10 @@ offset_bottom = 124.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Starting Platform/StaticBody2D"]
 shape = SubResource("SegmentShape2D_q5v5t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Starting Platform"]
+position = Vector2(-25, 63)
+shape = SubResource("RectangleShape2D_davks")
 
 [node name="Boundary Left" type="StaticBody2D" parent="."]
 position = Vector2(-3542, -206)
@@ -268,9 +277,15 @@ metadata/_edit_use_anchors_ = true
 position = Vector2(1, -1)
 shape = SubResource("RectangleShape2D_x6wv0")
 
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_q5v5t")]
+position = Vector2(2183, -1004)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("4_6hoih")]
+position = Vector2(2376, 63)
+
 [node name="Dash Checkpoint" type="Area2D" parent="."]
-position = Vector2(-6, -1819)
-script = ExtResource("3_q5v5t")
+position = Vector2(67, -2018)
+script = ExtResource("4_m7qo6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dash Checkpoint"]
 physics_interpolation_mode = 2

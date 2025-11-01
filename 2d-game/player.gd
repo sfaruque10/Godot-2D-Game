@@ -10,11 +10,20 @@ var jumps = 0
 var dashes = 0
 var is_dashing = false
 var dash_direction = 0
+var external_force: Vector2 = Vector2.ZERO
+var friction = 100
+var current_friction = 10000
+var normal_deceleration = 1000.0
+var slippery_deceleration = 100.0
+var current_deceleration = normal_deceleration
 #var gravity_direction = 1 # normal gravity or flipped gravity
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if is_dashing:
-		velocity.x = dash_speed * dash_direction * Global.gravity_direction
+		var target_speed = dash_speed * dash_direction * Global.gravity_direction
+		velocity.x = move_toward(velocity.x, target_speed, current_friction * delta)
+		#velocity.x = dash_speed * dash_direction * current_friction * delta * Global.gravity_direction
+		velocity += external_force
 		velocity.y = 0
 	else:
 		if (!is_on_floor() and Global.gravity_direction == 1) or (!is_on_ceiling() and Global.gravity_direction == -1): # make player fall to ground
@@ -30,7 +39,20 @@ func _physics_process(_delta: float) -> void:
 			jumps += 1 # increment number of jumps
 			
 		var direction = Input.get_axis("ui_left", "ui_right")
-		velocity.x = speed * direction * Global.gravity_direction
+		#velocity.x = speed * direction * current_friction * delta * Global.gravity_direction
+		#velocity.lerp(Vector2.ZERO, current_deceleration)
+		if direction:
+			# move towards max speed
+			var target_speed = speed * direction * Global.gravity_direction
+			# move_toward for smooth acceleration
+			velocity.x = move_toward(velocity.x, target_speed, current_friction * delta)
+		else:
+			if current_deceleration == slippery_deceleration:
+			# current_deceleration_rate to slow down gradually while on ice
+				velocity.x = move_toward(velocity.x, 0, current_deceleration * delta)
+			else:
+				velocity.x = 0
+		velocity += external_force
 		
 		# press shift while holding arrow key
 		if Input.is_action_just_pressed("dash") and Global.has_dash == true and dashes < Global.max_dashes: # dash
@@ -46,11 +68,25 @@ func _physics_process(_delta: float) -> void:
 				#dashes += 1
 	
 	move_and_slide()
+	external_force = Vector2.ZERO
 	
 func _on_timer_timeout() -> void:
 	is_dashing = false
+	
+func wind_push(force_amount: float):
+	external_force.x = force_amount
 
-
+func set_slippery_mode(is_slippery: bool):
+	if is_slippery:
+		#current_friction = 200
+		speed = 800
+		dash_speed = 1500
+		current_deceleration = slippery_deceleration
+	else:
+		#current_friction = friction
+		speed = 500
+		dash_speed = 1200
+		current_deceleration = normal_deceleration
 #func _on_ending_platform_body_entered(body: Node2D) -> void:
 	#print(get_groups())
 	#print(body.name)
