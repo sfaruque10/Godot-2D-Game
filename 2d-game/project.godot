@@ -23,6 +23,10 @@ Global="*res://global.gd"
 
 window/size/mode=2
 
+[global_group]
+
+Negative_Gravity=""
+
 [input]
 
 jump={

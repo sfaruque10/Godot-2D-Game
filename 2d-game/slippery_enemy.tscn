@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b3w3mq01yibaf" path="res://slippery_enemy.gd" id="1_5lclq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1nm4i"]
-size = Vector2(583, 12)
+size = Vector2(669.5, 12)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lclq"]
 radius = 64.0
@@ -20,7 +20,7 @@ texture = ExtResource("1_1nm4i")
 [node name="Slippery_Surface" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface"]
-position = Vector2(0, 73)
+position = Vector2(-43.25, 73)
 shape = SubResource("RectangleShape2D_1nm4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

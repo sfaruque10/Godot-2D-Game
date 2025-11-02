@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var push_force: float = 175.0 
+@export var push_force: float = 165.0 
 @export var wind_direction: int = 1 
 var player = null
 

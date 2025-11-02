@@ -1,5 +1,6 @@
 extends Area2D
 
+var player = null
 
 #func _on_body_entered(body: Node2D) -> void:
 	#print(get_groups())
@@ -15,6 +16,7 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
+	
 	print(get_groups())
 	print(body.name)
 	#print(Global.gravity_direction)
@@ -22,10 +24,14 @@ func _on_body_entered(body: Node2D) -> void:
 		print("working")
 	else:
 		print("not")
-	if body.name == "Player" and is_in_group("Negative_Gravity"):
+	if Global.gravity_direction == 1 and body.name == "Player" and is_in_group("Negative_Gravity"):
 	#if body.name == "Player":
+		player = body
 		Global.gravity_direction = -1
+		player.rotate_player()
 		print("gravity change")
-	elif body.name == "Player" and not is_in_group("Negative_Gravity"):
+	elif Global.gravity_direction == -1 and body.name == "Player" and not is_in_group("Negative_Gravity"):
+		player = body
 		Global.gravity_direction = 1
+		player.rotate_player()
 		print("gravity change")

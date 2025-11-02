@@ -79,7 +79,7 @@ func wind_push(force_amount: float):
 func set_slippery_mode(is_slippery: bool):
 	if is_slippery:
 		#current_friction = 200
-		speed = 800
+		speed = 2000
 		dash_speed = 1500
 		current_deceleration = slippery_deceleration
 	else:
@@ -87,6 +87,15 @@ func set_slippery_mode(is_slippery: bool):
 		speed = 500
 		dash_speed = 1200
 		current_deceleration = normal_deceleration
+
+func rotate_player():
+	if Global.gravity_direction == -1: # used to flip player 180
+		var tween = create_tween()
+		tween.tween_property($Sprite2D, "rotation_degrees", 180, 1.0)
+	if Global.gravity_direction == 1:
+		var tween = create_tween() # flip player back to normal
+		tween.tween_property($Sprite2D, "rotation_degrees", 0, 1.0)
+
 #func _on_ending_platform_body_entered(body: Node2D) -> void:
 	#print(get_groups())
 	#print(body.name)
