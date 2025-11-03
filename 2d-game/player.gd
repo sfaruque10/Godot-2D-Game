@@ -18,11 +18,15 @@ var slippery_deceleration = 100.0
 var current_deceleration = normal_deceleration
 #var gravity_direction = 1 # normal gravity or flipped gravity
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("default")
+
 func _physics_process(delta: float) -> void:
 	if is_dashing:
 		var target_speed = dash_speed * dash_direction * Global.gravity_direction
 		velocity.x = move_toward(velocity.x, target_speed, current_friction * delta)
 		#velocity.x = dash_speed * dash_direction * current_friction * delta * Global.gravity_direction
+		$AnimatedSprite2D.play("dash")
 		velocity += external_force
 		velocity.y = 0
 	else:
@@ -30,15 +34,26 @@ func _physics_process(delta: float) -> void:
 			velocity.y += gravity * Global.gravity_direction
 			if abs(velocity.y) > 1000:
 				velocity.y = 1000 * Global.gravity_direction
+				#$AnimatedSprite2D.play("fall")
+			if velocity.y * Global.gravity_direction < 0:
+				$AnimatedSprite2D.play("jump") 
+			if velocity.y * Global.gravity_direction > 0:
+				$AnimatedSprite2D.play("fall") 
 		else:
 			jumps = 0 # reset number of jumps
 			dashes = 0 # reset number of dashes
 		
 		if Input.is_action_just_pressed("jump") and jumps < Global.max_jumps:
 			velocity.y = -jump_force * Global.gravity_direction
+			#$AnimatedSprite2D.play("jump")
 			jumps += 1 # increment number of jumps
 			
 		var direction = Input.get_axis("ui_left", "ui_right")
+		
+		if direction == -1:
+			$AnimatedSprite2D.flip_h = true
+		elif direction == 1:
+			$AnimatedSprite2D.flip_h = false
 		#velocity.x = speed * direction * current_friction * delta * Global.gravity_direction
 		#velocity.lerp(Vector2.ZERO, current_deceleration)
 		if direction:
@@ -46,7 +61,10 @@ func _physics_process(delta: float) -> void:
 			var target_speed = speed * direction * Global.gravity_direction
 			# move_toward for smooth acceleration
 			velocity.x = move_toward(velocity.x, target_speed, current_friction * delta)
+			$AnimatedSprite2D.play("movement")
 		else:
+			if is_on_floor() or is_on_ceiling():
+				$AnimatedSprite2D.play("default")
 			if current_deceleration == slippery_deceleration:
 			# current_deceleration_rate to slow down gradually while on ice
 				velocity.x = move_toward(velocity.x, 0, current_deceleration * delta)
@@ -81,20 +99,22 @@ func set_slippery_mode(is_slippery: bool):
 		#current_friction = 200
 		speed = 2000
 		dash_speed = 1500
+		$AnimatedSprite2D.play("dash")
 		current_deceleration = slippery_deceleration
 	else:
 		#current_friction = friction
 		speed = 500
 		dash_speed = 1200
+		$AnimatedSprite2D.play("default")
 		current_deceleration = normal_deceleration
 
 func rotate_player():
 	if Global.gravity_direction == -1: # used to flip player 180
 		var tween = create_tween()
-		tween.tween_property($Sprite2D, "rotation_degrees", 180, 1.0)
+		tween.tween_property($AnimatedSprite2D, "rotation_degrees", 180, 1.0)
 	if Global.gravity_direction == 1:
 		var tween = create_tween() # flip player back to normal
-		tween.tween_property($Sprite2D, "rotation_degrees", 0, 1.0)
+		tween.tween_property($AnimatedSprite2D, "rotation_degrees", 0, 1.0)
 
 #func _on_ending_platform_body_entered(body: Node2D) -> void:
 	#print(get_groups())
