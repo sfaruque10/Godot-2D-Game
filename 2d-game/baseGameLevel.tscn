@@ -1709,7 +1709,7 @@ script = ExtResource("2_f53ul")
 offset_left = -3255.0
 offset_top = -2.0
 offset_right = 3209.0
-offset_bottom = 124.0
+offset_bottom = 87.0
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Starting Platform"]
 
