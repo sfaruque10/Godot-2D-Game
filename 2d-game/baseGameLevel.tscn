@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://dlncbqssqv1kr"]
+[gd_scene load_steps=29 format=4 uid="uid://dlncbqssqv1kr"]
 
 [ext_resource type="PackedScene" uid="uid://dtqiwfgfbnvf0" path="res://player.tscn" id="1_atsvf"]
 [ext_resource type="Script" uid="uid://b5u0bvy1s77yt" path="res://ending_platform.gd" id="2_f53ul"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://btvcl3jso720t" path="res://slippery_enemy.tscn" id="4_6hoih"]
 [ext_resource type="Script" uid="uid://b2dykq030im28" path="res://dash_checkpoint.gd" id="4_m7qo6"]
 [ext_resource type="Texture2D" uid="uid://b2oj7yxw2bp78" path="res://DarkCastleTileset/CastleWallsInner.png" id="6_x6wv0"]
+[ext_resource type="Script" uid="uid://bfibnmv2hk1jx" path="res://double_jump_checkpoint.gd" id="7_opwys"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_q5v5t"]
 a = Vector2(3223, 0)
@@ -15,7 +16,7 @@ b = Vector2(-3260, 0)
 size = Vector2(6478, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t3wiy"]
-size = Vector2(200, 5239.5)
+size = Vector2(200, 10941.375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q5v5t"]
 size = Vector2(261.5, 222.5)
@@ -83,10 +84,16 @@ sources/1 = SubResource("TileSetAtlasSource_opwys")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovxrf"]
 size = Vector2(1431, 126.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vwln"]
+size = Vector2(875, 82)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1g016"]
+size = Vector2(411, 219)
+
 [node name="BaseGameLevel" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_atsvf")]
-position = Vector2(-2502, -2007)
+position = Vector2(-3, -1823)
 
 [node name="Starting Platform" type="Area2D" parent="."]
 position = Vector2(29, 132)
@@ -111,14 +118,14 @@ shape = SubResource("RectangleShape2D_davks")
 position = Vector2(-3542, -206)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Left"]
-position = Vector2(214, -2156)
+position = Vector2(214, -3573.625)
 shape = SubResource("RectangleShape2D_t3wiy")
 
 [node name="Boundary Right" type="StaticBody2D" parent="."]
 position = Vector2(3148, -177)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Right"]
-position = Vector2(191, -2183)
+position = Vector2(191, -3616.3125)
 shape = SubResource("RectangleShape2D_t3wiy")
 
 [node name="Platform 1" type="StaticBody2D" parent="."]
@@ -261,7 +268,7 @@ offset_bottom = 39.0
 shape = SubResource("RectangleShape2D_6hoih")
 
 [node name="Platform 13" type="StaticBody2D" parent="."]
-position = Vector2(2, -897)
+position = Vector2(13, -897)
 
 [node name="ColorRect" type="ColorRect" parent="Platform 13"]
 offset_left = -67.0
@@ -526,9 +533,154 @@ script = ExtResource("2_f53ul")
 position = Vector2(5699.5, -47.75)
 shape = SubResource("RectangleShape2D_ovxrf")
 
+[node name="Platform 29" type="StaticBody2D" parent="."]
+position = Vector2(905, -4317)
+
+[node name="ColorRect" type="ColorRect" parent="Platform 29"]
+offset_left = -208.0
+offset_top = -41.0
+offset_right = 211.0
+offset_bottom = 39.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 29"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_x6wv0")
+
+[node name="Platform 30" type="StaticBody2D" parent="."]
+position = Vector2(-323, -4544)
+
+[node name="ColorRect" type="ColorRect" parent="Platform 30"]
+offset_left = -208.0
+offset_top = -41.0
+offset_right = 211.0
+offset_bottom = 39.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 30"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_x6wv0")
+
+[node name="Platform 31" type="StaticBody2D" parent="."]
+position = Vector2(-1537, -4749)
+
+[node name="ColorRect" type="ColorRect" parent="Platform 31"]
+offset_left = -208.0
+offset_top = -41.0
+offset_right = 211.0
+offset_bottom = 39.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 31"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_x6wv0")
+
+[node name="Platform 32" type="StaticBody2D" parent="."]
+position = Vector2(-2709, -4980)
+
+[node name="ColorRect" type="ColorRect" parent="Platform 32"]
+offset_left = -208.0
+offset_top = -41.0
+offset_right = 211.0
+offset_bottom = 39.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 32"]
+position = Vector2(1, -1)
+shape = SubResource("RectangleShape2D_x6wv0")
+
+[node name="Platform 33" type="StaticBody2D" parent="."]
+position = Vector2(-2140, -4617)
+rotation = 1.5707964
+
+[node name="ColorRect" type="ColorRect" parent="Platform 33"]
+offset_left = -424.12646
+offset_top = -41.0
+offset_right = 454.63354
+offset_bottom = 39.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 33"]
+position = Vector2(14.5, -1)
+shape = SubResource("RectangleShape2D_1vwln")
+
+[node name="Platform 34" type="StaticBody2D" parent="."]
+position = Vector2(-2142, -5640)
+rotation = 1.5707964
+
+[node name="ColorRect" type="ColorRect" parent="Platform 34"]
+offset_left = -424.12646
+offset_top = -41.0
+offset_right = 454.63354
+offset_bottom = 39.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 34"]
+position = Vector2(14.5, -1)
+shape = SubResource("RectangleShape2D_1vwln")
+
+[node name="Platform 35" type="StaticBody2D" parent="."]
+position = Vector2(-755, -4135)
+rotation = 1.5707964
+
+[node name="ColorRect" type="ColorRect" parent="Platform 35"]
+offset_left = -424.12646
+offset_top = -41.0
+offset_right = 454.63354
+offset_bottom = 39.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 35"]
+position = Vector2(14.5, -1)
+shape = SubResource("RectangleShape2D_1vwln")
+
+[node name="Platform 36" type="StaticBody2D" parent="."]
+position = Vector2(-763, -5200)
+rotation = 1.5707964
+
+[node name="ColorRect" type="ColorRect" parent="Platform 36"]
+offset_left = -424.12646
+offset_top = -41.0
+offset_right = 454.63354
+offset_bottom = 39.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 36"]
+position = Vector2(14.5, -1)
+shape = SubResource("RectangleShape2D_1vwln")
+
+[node name="Platform 37" type="StaticBody2D" parent="."]
+position = Vector2(92, -4208)
+rotation = 1.5707964
+
+[node name="ColorRect" type="ColorRect" parent="Platform 37"]
+offset_left = -424.12646
+offset_top = -41.0
+offset_right = 454.63354
+offset_bottom = 39.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 37"]
+position = Vector2(14.5, -1)
+shape = SubResource("RectangleShape2D_1vwln")
+
+[node name="Platform 38" type="StaticBody2D" parent="."]
+position = Vector2(90, -5300)
+rotation = 1.5707964
+
+[node name="ColorRect" type="ColorRect" parent="Platform 38"]
+offset_left = -424.12646
+offset_top = -41.0
+offset_right = 454.63354
+offset_bottom = 39.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform 38"]
+position = Vector2(14.5, -1)
+shape = SubResource("RectangleShape2D_1vwln")
+
+[node name="Double Jump Checkpoint" type="Area2D" parent="."]
+position = Vector2(-2712, -5243)
+script = ExtResource("7_opwys")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Double Jump Checkpoint"]
+position = Vector2(1.5, 99.5)
+shape = SubResource("RectangleShape2D_1g016")
+
 [connection signal="body_entered" from="Starting Platform" to="Starting Platform" method="_on_body_entered"]
 [connection signal="body_entered" from="Dash Checkpoint" to="Dash Checkpoint" method="_on_body_entered"]
 [connection signal="body_entered" from="GravSwap" to="GravSwap" method="_on_body_entered"]
 [connection signal="body_entered" from="GravSwap2" to="GravSwap2" method="_on_body_entered"]
 [connection signal="body_entered" from="GravSwap3" to="GravSwap3" method="_on_body_entered"]
 [connection signal="body_entered" from="GravSwap4" to="GravSwap4" method="_on_body_entered"]
+[connection signal="body_entered" from="Double Jump Checkpoint" to="Double Jump Checkpoint" method="_on_body_entered"]
