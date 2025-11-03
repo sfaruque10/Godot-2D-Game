@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bb1lbkktqm77h"]
+[gd_scene load_steps=12 format=3 uid="uid://bb1lbkktqm77h"]
 
 [ext_resource type="Script" uid="uid://du4r1d3xpryca" path="res://wind_enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://c0sifxw5an1mi" path="res://snowman.png" id="2_4mwrr"]
+[ext_resource type="Texture2D" uid="uid://cq8x00x70nb2s" path="res://Kirby.png" id="2_4mwrr"]
 [ext_resource type="Texture2D" uid="uid://b72y57ebaxtva" path="res://wind.png" id="3_mmjfa"]
 [ext_resource type="Texture2D" uid="uid://lc5qxm2i3bc0" path="res://wind1.png" id="4_4mwrr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4mwrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(794, 127)
@@ -50,9 +52,13 @@ collision_layer = 3
 script = ExtResource("1_4gyqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 8)
-scale = Vector2(0.198375, 0.198375)
+scale = Vector2(0.23070487, 0.23070487)
 texture = ExtResource("2_4mwrr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+scale = Vector2(0.21696527, 0.21696527)
+sprite_frames = SubResource("SpriteFrames_4mwrr")
 
 [node name="Wind" type="Area2D" parent="."]
 collision_layer = 4

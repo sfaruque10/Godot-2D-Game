@@ -1,13 +1,13 @@
 [gd_scene load_steps=10 format=3 uid="uid://btvcl3jso720t"]
 
-[ext_resource type="Texture2D" uid="uid://bpvi3lfu530w" path="res://icon.svg" id="1_1nm4i"]
 [ext_resource type="Script" uid="uid://b3w3mq01yibaf" path="res://slippery_enemy.gd" id="1_5lclq"]
+[ext_resource type="Texture2D" uid="uid://c0sifxw5an1mi" path="res://snowman.png" id="2_5lclq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1nm4i"]
-size = Vector2(642, 12)
+size = Vector2(490, 12)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lclq"]
-radius = 64.0
+radius = 43.0
 height = 128.0
 
 [sub_resource type="Curve" id="Curve_5lclq"]
@@ -39,20 +39,21 @@ alpha_curve = SubResource("CurveTexture_f5sun")
 script = ExtResource("1_5lclq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.043137256, 0.13725491, 0.43137255, 1)
-texture = ExtResource("1_1nm4i")
+position = Vector2(0, 7.9999995)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_5lclq")
 
 [node name="Slippery_Surface" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface"]
-position = Vector2(-258, 73)
+position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_1nm4i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5lclq")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(-264, -97)
+position = Vector2(0, -97)
 amount = 200
 lifetime = 10.0
 preprocess = 30.0
