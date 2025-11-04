@@ -62,7 +62,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_ff64o")
 text = "Move Left: Left Arrow
 Move Right: Right Arrow
 Jump: Up Arrow
-Dash: Space"
+Dash: Left or Right Arrow + Space"
 horizontal_alignment = 1
 vertical_alignment = 1
 
