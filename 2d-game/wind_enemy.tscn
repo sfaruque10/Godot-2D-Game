@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bb1lbkktqm77h"]
+[gd_scene load_steps=13 format=3 uid="uid://bb1lbkktqm77h"]
 
 [ext_resource type="Script" uid="uid://du4r1d3xpryca" path="res://wind_enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://cq8x00x70nb2s" path="res://Kirby.png" id="2_4mwrr"]
@@ -11,8 +11,8 @@
 size = Vector2(794, 127)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qi2p4"]
-radius = 50.0
-height = 130.0
+radius = 53.0
+height = 106.0
 
 [sub_resource type="Curve" id="Curve_mmjfa"]
 _data = [Vector2(0, 0), 0.0, 4.2787285, 0, 0, Vector2(0.18421054, 0.12411356), 0.0, 0.0, 0, 0, Vector2(0.37969923, 0.13249516), 0.0, 0.0, 0, 0, Vector2(0.5714286, 0.19116706), 0.0, 0.0, 0, 0, Vector2(0.6917293, 0.19954872), 3.8423553, 3.8423553, 0, 0, Vector2(0.9661655, 0.12411356), 0.0, 0.0, 0, 0]
@@ -47,6 +47,10 @@ gravity = Vector3(0, 98, 0)
 scale_min = 0.5
 scale_max = 0.5
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4mwrr"]
+radius = 28.383041
+height = 69.38078
+
 [node name="Wind_Enemy" type="CharacterBody2D"]
 collision_layer = 3
 script = ExtResource("1_4gyqm")
@@ -64,9 +68,11 @@ sprite_frames = SubResource("SpriteFrames_4mwrr")
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wind"]
+visible = false
 shape = SubResource("RectangleShape2D_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.95999783, 0.97828966)
 shape = SubResource("CapsuleShape2D_qi2p4")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
@@ -96,5 +102,13 @@ amount = 4
 texture = ExtResource("4_4mwrr")
 process_material = SubResource("ParticleProcessMaterial_mmjfa")
 
+[node name="KillZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, -44)
+scale = Vector2(1.3600008, 0.31709075)
+shape = SubResource("CapsuleShape2D_4mwrr")
+
 [connection signal="body_entered" from="Wind" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Wind" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]

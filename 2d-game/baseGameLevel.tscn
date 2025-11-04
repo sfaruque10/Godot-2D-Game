@@ -60,7 +60,7 @@ size = Vector2(872.75, 126.5)
 size = Vector2(420, 82)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovxrf"]
-size = Vector2(2073, 126.5)
+size = Vector2(3093, 126.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cmqo7"]
 size = Vector2(417, 82)
@@ -87,7 +87,7 @@ size = Vector2(910, 82)
 size = Vector2(411, 219)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkb15"]
-size = Vector2(2205, 126.5)
+size = Vector2(6466, 126.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u8jwe"]
 size = Vector2(1110, 82)
@@ -2158,7 +2158,7 @@ position = Vector2(-3564, -4266)
 script = ExtResource("2_f53ul")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GravSwap4"]
-position = Vector2(5733.5, -47.75)
+position = Vector2(5257.5, -47.75)
 shape = SubResource("RectangleShape2D_ovxrf")
 
 [node name="Platform 29" type="StaticBody2D" parent="."]
@@ -2342,7 +2342,8 @@ position = Vector2(-8215, -6655)
 script = ExtResource("2_f53ul")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GravSwap5"]
-position = Vector2(6086.5, -47.75)
+position = Vector2(8217, -47.75)
+scale = Vector2(1.0011677, 1)
 shape = SubResource("RectangleShape2D_fkb15")
 
 [node name="Platform 41" type="StaticBody2D" parent="."]

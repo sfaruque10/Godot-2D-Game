@@ -19,3 +19,11 @@ func _physics_process(_delta):
 		# apply the horizontal force
 		var direction_x = sign(player.global_position.x - global_position.x)
 		player.wind_push(direction_x * push_force)
+
+
+func _on_kill_zone_body_entered(body: Node2D) -> void:
+	if body.name == "Player":
+		die()
+
+func die():
+	queue_free()
