@@ -8,6 +8,9 @@ func _on_body_entered(body):
 	# check if the entered body is the player 
 	if body.name == "Player":
 		player = body
+		if not $WindBlowing.playing:
+			print("playing wind")
+			$WindBlowing.play()
 
 func _on_body_exited(body):
 	if body == player:

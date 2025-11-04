@@ -62,6 +62,8 @@ func _physics_process(delta: float) -> void:
 			# move_toward for smooth acceleration
 			velocity.x = move_toward(velocity.x, target_speed, current_friction * delta)
 			$AnimatedSprite2D.play("movement")
+			if speed == 2000 and not $Slip.playing:
+				$Slip.play()
 		else:
 			if is_on_floor() or is_on_ceiling():
 				$AnimatedSprite2D.play("default")
