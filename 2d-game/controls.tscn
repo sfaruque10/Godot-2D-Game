@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1ro5db0ydvru"]
+
+[ext_resource type="Texture2D" uid="uid://7lkkh2snh2bd" path="res://Background.png" id="1_gpdjo"]
+[ext_resource type="Script" uid="uid://clp6e1ufbkbrc" path="res://controls.gd" id="1_qo8cm"]
+
+[node name="Controls" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qo8cm")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_gpdjo")
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -368.0
+offset_top = -90.0
+offset_right = 368.0
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 84
+text = "BACK"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
