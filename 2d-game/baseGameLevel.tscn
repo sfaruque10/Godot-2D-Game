@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://dlncbqssqv1kr"]
+[gd_scene load_steps=47 format=4 uid="uid://dlncbqssqv1kr"]
 
 [ext_resource type="PackedScene" uid="uid://bcqmq31y4hd2e" path="res://PlayerCommands.tscn" id="1_aevuf"]
 [ext_resource type="PackedScene" uid="uid://dtqiwfgfbnvf0" path="res://player.tscn" id="1_atsvf"]
@@ -12,6 +12,7 @@
 [ext_resource type="FontFile" uid="uid://cqe6t56011gww" path="res://cardinal/Cardinal.ttf" id="7_uvsk6"]
 [ext_resource type="PackedScene" uid="uid://c57jl273lxwj3" path="res://Background.tscn" id="8_3kg2f"]
 [ext_resource type="Script" uid="uid://do2icfw4pxtnv" path="res://win_checkpoint.gd" id="12_sjpi1"]
+[ext_resource type="AudioStream" uid="uid://bh2s8kdbk0sdm" path="res://Thats_Life_2008_Remastered.mp3" id="13_davks"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_q5v5t"]
 a = Vector2(3223, 0)
@@ -2606,6 +2607,11 @@ position = Vector2(1, -11053)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boundary Top"]
 position = Vector2(5.5, 40.5)
 shape = SubResource("RectangleShape2D_7ie2o")
+
+[node name="That\'s Life 2008 Remaster" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_davks")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Starting Platform" to="Starting Platform" method="_on_body_entered"]
 [connection signal="body_entered" from="Dash Checkpoint" to="Dash Checkpoint" method="_on_body_entered"]
