@@ -113,7 +113,7 @@ shape = SubResource("CapsuleShape2D_4mwrr")
 
 [node name="WindBlowing" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_cxale")
-volume_db = 2.0
+volume_db = 10.0
 
 [connection signal="body_entered" from="Wind" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Wind" to="." method="_on_body_exited"]
