@@ -40,7 +40,7 @@ radius = 22.095152
 height = 46.294605
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lclq"]
-size = Vector2(80, 12)
+size = Vector2(72, 12)
 
 [node name="Slippery_Enemy" type="CharacterBody2D"]
 script = ExtResource("1_5lclq")
@@ -100,13 +100,13 @@ offset_bottom = 53.0
 position = Vector2(1305, 76)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface3"]
-position = Vector2(-3, 35)
+position = Vector2(-7, 35)
 shape = SubResource("RectangleShape2D_5lclq")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface3"]
 offset_left = -43.0
 offset_top = 25.0
-offset_right = 37.0
+offset_right = 29.0
 offset_bottom = 46.0
 
 [node name="Slippery_Surface4" type="Area2D" parent="."]
@@ -117,9 +117,9 @@ position = Vector2(-3, 35)
 shape = SubResource("RectangleShape2D_5lclq")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface4"]
-offset_left = -43.0
+offset_left = -31.0
 offset_top = 25.0
-offset_right = 38.0
+offset_right = 33.0
 offset_bottom = 47.0
 
 [node name="Slippery_Surface5" type="Area2D" parent="."]
