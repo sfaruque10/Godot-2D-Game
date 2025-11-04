@@ -59,9 +59,9 @@ shape = SubResource("RectangleShape2D_1nm4i")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface"]
 offset_left = -207.0
-offset_top = 61.0
+offset_top = 57.0
 offset_right = 205.0
-offset_bottom = 87.0
+offset_bottom = 83.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1, 0.9200014)
@@ -105,9 +105,9 @@ shape = SubResource("RectangleShape2D_5lclq")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface3"]
 offset_left = -43.0
-offset_top = 29.0
+offset_top = 25.0
 offset_right = 37.0
-offset_bottom = 50.0
+offset_bottom = 46.0
 
 [node name="Slippery_Surface4" type="Area2D" parent="."]
 position = Vector2(662, 73)
@@ -118,12 +118,12 @@ shape = SubResource("RectangleShape2D_5lclq")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface4"]
 offset_left = -43.0
-offset_top = 30.0
+offset_top = 25.0
 offset_right = 38.0
-offset_bottom = 52.0
+offset_bottom = 47.0
 
 [node name="Slippery_Surface5" type="Area2D" parent="."]
-position = Vector2(-14, 29)
+position = Vector2(-7, 29)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface5"]
 position = Vector2(1, 35)
@@ -131,9 +131,9 @@ shape = SubResource("RectangleShape2D_1nm4i")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface5"]
 offset_left = -204.0
-offset_top = 29.0
+offset_top = 23.0
 offset_right = 207.0
-offset_bottom = 53.0
+offset_bottom = 47.0
 
 [connection signal="body_entered" from="Slippery_Surface" to="." method="_on_body_entered"]
 [connection signal="body_exited" from="Slippery_Surface" to="." method="_on_body_exited"]
