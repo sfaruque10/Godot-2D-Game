@@ -8,7 +8,7 @@
 [sub_resource type="SpriteFrames" id="SpriteFrames_4mwrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
-size = Vector2(794, 127)
+size = Vector2(4750.5, 611)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qi2p4"]
 radius = 53.0
@@ -68,7 +68,7 @@ sprite_frames = SubResource("SpriteFrames_4mwrr")
 collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Wind"]
-visible = false
+position = Vector2(1684.75, -16)
 shape = SubResource("RectangleShape2D_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -87,8 +87,9 @@ process_material = SubResource("ParticleProcessMaterial_4mwrr")
 
 [node name="GPUParticles2D3" type="GPUParticles2D" parent="."]
 modulate = Color(18.892157, 18.892157, 18.892157, 1)
-position = Vector2(178, 0)
-amount = 4
+position = Vector2(488, -21)
+scale = Vector2(9, 3)
+amount = 20
 texture = ExtResource("4_4mwrr")
 lifetime = 2.0
 trail_lifetime = 6.699999999999999
