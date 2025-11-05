@@ -4,6 +4,9 @@ extends CharacterBody2D
 @export var wind_direction: int = 1 
 var player = null
 
+func _ready() -> void:
+	$AnimatedSprite2D.play("default")
+
 func _on_body_entered(body):
 	# check if the entered body is the player 
 	if body.name == "Player":

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cq8x00x70nb2s"
-path="res://.godot/imported/Kirby.png-e78fcdfbe264150b717c382bb6252465.ctex"
+uid="uid://c00x6xrc4qfql"
+path="res://.godot/imported/dd7be055-2c03-4747-acdb-ef16b3d3088a-41.png-8a5666f3372f40d3d02ef9f596ae1b31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Kirby.png"
-dest_files=["res://.godot/imported/Kirby.png-e78fcdfbe264150b717c382bb6252465.ctex"]
+source_file="res://pixel_kirby_gif/dd7be055-2c03-4747-acdb-ef16b3d3088a-41.png"
+dest_files=["res://.godot/imported/dd7be055-2c03-4747-acdb-ef16b3d3088a-41.png-8a5666f3372f40d3d02ef9f596ae1b31.ctex"]
 
 [params]
 

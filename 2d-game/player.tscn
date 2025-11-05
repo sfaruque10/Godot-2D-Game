@@ -228,7 +228,8 @@ texture = ExtResource("2_i3pqv")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_hqtel")
-frame_progress = 0.9231002
+frame = 1
+frame_progress = 0.41715565
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-5, 7.4999995)
