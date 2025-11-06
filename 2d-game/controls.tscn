@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b1ro5db0ydvru"]
+[gd_scene load_steps=8 format=3 uid="uid://b1ro5db0ydvru"]
 
 [ext_resource type="Texture2D" uid="uid://7lkkh2snh2bd" path="res://Background.png" id="1_gpdjo"]
 [ext_resource type="Script" uid="uid://clp6e1ufbkbrc" path="res://controls.gd" id="1_qo8cm"]
@@ -17,6 +17,9 @@ corner_radius_top_left = 25
 corner_radius_top_right = 25
 corner_radius_bottom_right = 25
 corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kxvun"]
+bg_color = Color(0.43529412, 0.27058825, 0.6784314, 0.6627451)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xwvqn"]
 bg_color = Color(0.43529412, 0.27058825, 0.6784314, 0.6627451)
@@ -82,6 +85,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_xwvqn")
 theme_override_font_sizes/font_size = 84
 theme_override_styles/normal = SubResource("StyleBoxFlat_qo8cm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_kxvun")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xwvqn")
 text = "BACK"
 
