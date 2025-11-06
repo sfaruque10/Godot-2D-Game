@@ -62,10 +62,10 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("3_xwvqn")
 theme_override_font_sizes/font_size = 84
 theme_override_styles/normal = SubResource("StyleBoxFlat_ff64o")
-text = "Move Left: Left Arrow
-Move Right: Right Arrow
-Jump: Up Arrow
-Dash: Left or Right Arrow + Space"
+text = "Move Left: Left Arrow or \"A\" Key
+Move Right: Right Arrow or \"D\" Key
+Jump: Up Arrow or \"W\" Key
+Dash: Move Left or Right Arrow + Space"
 horizontal_alignment = 1
 vertical_alignment = 1
 
