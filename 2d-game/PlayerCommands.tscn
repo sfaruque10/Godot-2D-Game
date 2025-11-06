@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcqmq31y4hd2e"]
 
 [ext_resource type="Script" uid="uid://ber1tq64vd4l1" path="res://player_commands.gd" id="1_aqmi4"]
-[ext_resource type="FontFile" uid="uid://cqe6t56011gww" path="res://cardinal/Cardinal.ttf" id="1_nkb0y"]
+[ext_resource type="FontFile" uid="uid://cqe6t56011gww" path="res://Assets/cardinal/Cardinal.ttf" id="1_nkb0y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aqmi4"]
 bg_color = Color(0.56078434, 0.39607844, 0.827451, 0.6627451)

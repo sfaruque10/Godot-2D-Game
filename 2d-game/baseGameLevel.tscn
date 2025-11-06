@@ -6,13 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bb1lbkktqm77h" path="res://wind_enemy.tscn" id="3_q5v5t"]
 [ext_resource type="PackedScene" uid="uid://btvcl3jso720t" path="res://slippery_enemy.tscn" id="4_6hoih"]
 [ext_resource type="Script" uid="uid://b2dykq030im28" path="res://dash_checkpoint.gd" id="4_m7qo6"]
-[ext_resource type="Texture2D" uid="uid://dtoe8scrideve" path="res://EP_Tileset1_pack/Tileset/EP_Tileset1_black.png" id="6_t3wiy"]
-[ext_resource type="Texture2D" uid="uid://b2oj7yxw2bp78" path="res://DarkCastleTileset/CastleWallsInner.png" id="6_x6wv0"]
+[ext_resource type="Texture2D" uid="uid://dtoe8scrideve" path="res://Assets/EP_Tileset1_pack/Tileset/EP_Tileset1_black.png" id="6_t3wiy"]
 [ext_resource type="Script" uid="uid://bfibnmv2hk1jx" path="res://double_jump_checkpoint.gd" id="7_opwys"]
-[ext_resource type="FontFile" uid="uid://cqe6t56011gww" path="res://cardinal/Cardinal.ttf" id="7_uvsk6"]
+[ext_resource type="FontFile" uid="uid://cqe6t56011gww" path="res://Assets/cardinal/Cardinal.ttf" id="7_uvsk6"]
 [ext_resource type="PackedScene" uid="uid://c57jl273lxwj3" path="res://Background.tscn" id="8_3kg2f"]
 [ext_resource type="Script" uid="uid://do2icfw4pxtnv" path="res://win_checkpoint.gd" id="12_sjpi1"]
-[ext_resource type="AudioStream" uid="uid://bh2s8kdbk0sdm" path="res://Thats_Life_2008_Remastered.mp3" id="13_davks"]
+[ext_resource type="AudioStream" uid="uid://bh2s8kdbk0sdm" path="res://Assets/Thats_Life_2008_Remastered.mp3" id="13_davks"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_q5v5t"]
 a = Vector2(3223, 0)
@@ -1706,8 +1705,11 @@ texture = ExtResource("6_t3wiy")
 48:31/0 = 0
 49:31/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sjpi1"]
+load_path = "res://.godot/imported/CastleWallsInner.png-d66c9844f22ac5f4f100cf94e332c01b.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_opwys"]
-texture = ExtResource("6_x6wv0")
+texture = SubResource("CompressedTexture2D_sjpi1")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0

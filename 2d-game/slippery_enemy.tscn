@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://btvcl3jso720t"]
 
 [ext_resource type="Script" uid="uid://b3w3mq01yibaf" path="res://slippery_enemy.gd" id="1_5lclq"]
-[ext_resource type="Texture2D" uid="uid://c0sifxw5an1mi" path="res://snowman.png" id="2_5lclq"]
+[ext_resource type="Texture2D" uid="uid://c0sifxw5an1mi" path="res://Assets/snowman.png" id="2_5lclq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1nm4i"]
 size = Vector2(412, 12)
