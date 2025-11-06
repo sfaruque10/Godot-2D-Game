@@ -12,7 +12,7 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		player = body
 		if not $WindBlowing.playing:
-			print("playing wind")
+			# wind sound effect
 			$WindBlowing.play()
 
 func _on_body_exited(body):
@@ -21,7 +21,6 @@ func _on_body_exited(body):
 
 func _physics_process(_delta):
 	if player:
-		#var direction_x = sign(player.global_position.x - global_position.x)
 		# apply the horizontal force
 		var direction_x = sign(player.global_position.x - global_position.x)
 		player.wind_push(direction_x * push_force)
