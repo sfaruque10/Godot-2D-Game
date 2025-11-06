@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://cq21lqcxugmvm"]
+
+[ext_resource type="Script" uid="uid://b8nx6xgkajg6s" path="res://title_screen.gd" id="1_ak2if"]
+[ext_resource type="Texture2D" uid="uid://7lkkh2snh2bd" path="res://Background.png" id="1_v6p8y"]
+[ext_resource type="FontFile" uid="uid://cqe6t56011gww" path="res://cardinal/Cardinal.ttf" id="3_ig5kc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ak2if"]
+bg_color = Color(0.56078434, 0.39607844, 0.827451, 0.6627451)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqemp"]
+bg_color = Color(0.43529412, 0.27058825, 0.6784314, 0.827451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig5kc"]
+bg_color = Color(0.43529412, 0.27058825, 0.6784314, 0.6627451)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05l2w"]
+bg_color = Color(0.56078434, 0.39607844, 0.827451, 0.6627451)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpml5"]
+bg_color = Color(0.43529412, 0.27058825, 0.6784314, 0.827451)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hafda"]
+bg_color = Color(0.43529412, 0.27058825, 0.6784314, 0.6627451)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ak2if")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_v6p8y")
+
+[node name="MenuBar" type="MenuBar" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StartButton" type="Button" parent="MenuBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -350.0
+offset_top = -65.0
+offset_right = 350.0
+offset_bottom = 65.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ig5kc")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = SubResource("StyleBoxFlat_ak2if")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jqemp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_ig5kc")
+text = "START GAME"
+
+[node name="ControlsButton" type="Button" parent="MenuBar"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = 180.0
+offset_right = 300.0
+offset_bottom = 310.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ig5kc")
+theme_override_font_sizes/font_size = 84
+theme_override_styles/normal = SubResource("StyleBoxFlat_05l2w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_tpml5")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hafda")
+text = "CONTROLS"
+
+[connection signal="pressed" from="MenuBar/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="MenuBar/ControlsButton" to="." method="_on_controls_button_pressed"]

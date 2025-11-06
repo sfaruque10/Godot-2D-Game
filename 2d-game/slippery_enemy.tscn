@@ -1,0 +1,148 @@
+[gd_scene load_steps=12 format=3 uid="uid://btvcl3jso720t"]
+
+[ext_resource type="Script" uid="uid://b3w3mq01yibaf" path="res://slippery_enemy.gd" id="1_5lclq"]
+[ext_resource type="Texture2D" uid="uid://c0sifxw5an1mi" path="res://snowman.png" id="2_5lclq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1nm4i"]
+size = Vector2(412, 12)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lclq"]
+radius = 49.0
+height = 130.43459
+
+[sub_resource type="Curve" id="Curve_5lclq"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.7631579, 0.58929724), -1.8865253, -1.8865253, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_f5sun"]
+curve = SubResource("Curve_5lclq")
+
+[sub_resource type="Gradient" id="Gradient_5lclq"]
+offsets = PackedFloat32Array(0, 0.6273585, 0.7877358, 0.990566)
+colors = PackedColorArray(1, 1, 1, 0.63529414, 1, 1, 1, 0.9257485, 1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_f5sun"]
+gradient = SubResource("Gradient_5lclq")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_kafw8"]
+lifetime_randomness = 0.22
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(320, 100, 1)
+gravity = Vector3(0, 98, 0)
+scale_min = 5.0
+scale_max = 10.0
+color_ramp = SubResource("GradientTexture1D_f5sun")
+alpha_curve = SubResource("CurveTexture_f5sun")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f5sun"]
+radius = 22.095152
+height = 46.294605
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5lclq"]
+size = Vector2(72, 12)
+
+[node name="Slippery_Enemy" type="CharacterBody2D"]
+script = ExtResource("1_5lclq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.99999994, 0)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_5lclq")
+
+[node name="Slippery_Surface" type="Area2D" parent="."]
+position = Vector2(1957, 261)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface"]
+position = Vector2(0, 72)
+shape = SubResource("RectangleShape2D_1nm4i")
+
+[node name="ColorRect" type="ColorRect" parent="Slippery_Surface"]
+offset_left = -207.0
+offset_top = 57.0
+offset_right = 205.0
+offset_bottom = 83.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1, 0.9200014)
+shape = SubResource("CapsuleShape2D_5lclq")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(1112, -84)
+rotation = -0.0014899445
+scale = Vector2(6, 1)
+amount = 200
+lifetime = 10.0
+preprocess = 30.0
+process_material = SubResource("ParticleProcessMaterial_kafw8")
+
+[node name="KillZone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, -60)
+scale = Vector2(0.9504347, 0.26778084)
+shape = SubResource("CapsuleShape2D_f5sun")
+
+[node name="Slippery_Surface2" type="Area2D" parent="."]
+position = Vector2(2748, 806)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface2"]
+position = Vector2(1, 35)
+shape = SubResource("RectangleShape2D_1nm4i")
+
+[node name="ColorRect" type="ColorRect" parent="Slippery_Surface2"]
+offset_left = -204.0
+offset_top = 29.0
+offset_right = 207.0
+offset_bottom = 53.0
+
+[node name="Slippery_Surface3" type="Area2D" parent="."]
+position = Vector2(1305, 76)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface3"]
+position = Vector2(-7, 35)
+shape = SubResource("RectangleShape2D_5lclq")
+
+[node name="ColorRect" type="ColorRect" parent="Slippery_Surface3"]
+offset_left = -43.0
+offset_top = 25.0
+offset_right = 29.0
+offset_bottom = 46.0
+
+[node name="Slippery_Surface4" type="Area2D" parent="."]
+position = Vector2(662, 73)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface4"]
+position = Vector2(-3, 35)
+shape = SubResource("RectangleShape2D_5lclq")
+
+[node name="ColorRect" type="ColorRect" parent="Slippery_Surface4"]
+offset_left = -31.0
+offset_top = 25.0
+offset_right = 33.0
+offset_bottom = 47.0
+
+[node name="Slippery_Surface5" type="Area2D" parent="."]
+position = Vector2(-7, 29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface5"]
+position = Vector2(1, 35)
+shape = SubResource("RectangleShape2D_1nm4i")
+
+[node name="ColorRect" type="ColorRect" parent="Slippery_Surface5"]
+offset_left = -204.0
+offset_top = 23.0
+offset_right = 207.0
+offset_bottom = 47.0
+
+[connection signal="body_entered" from="Slippery_Surface" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Slippery_Surface" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
+[connection signal="body_entered" from="Slippery_Surface2" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Slippery_Surface2" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Slippery_Surface3" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Slippery_Surface3" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Slippery_Surface4" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Slippery_Surface4" to="." method="_on_body_exited"]
+[connection signal="body_entered" from="Slippery_Surface5" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="Slippery_Surface5" to="." method="_on_body_exited"]
