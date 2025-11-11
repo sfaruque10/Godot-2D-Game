@@ -35,6 +35,7 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_nkb0y")
 theme_override_font_sizes/font_size = 84
 theme_override_styles/normal = SubResource("StyleBoxFlat_aqmi4")
-text = "You only have the ability to jump and move left and right"
+text = "You only have the ability to jump and move left and right. 
+You can jump midair."
 horizontal_alignment = 1
 vertical_alignment = 1
