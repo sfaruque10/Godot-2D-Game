@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=4 uid="uid://dlncbqssqv1kr"]
+[gd_scene load_steps=64 format=4 uid="uid://dlncbqssqv1kr"]
 
 [ext_resource type="PackedScene" uid="uid://bcqmq31y4hd2e" path="res://PlayerCommands.tscn" id="1_aevuf"]
 [ext_resource type="PackedScene" uid="uid://dtqiwfgfbnvf0" path="res://player.tscn" id="1_atsvf"]
@@ -11,6 +11,7 @@
 [ext_resource type="FontFile" uid="uid://cqe6t56011gww" path="res://Assets/cardinal/Cardinal.ttf" id="7_uvsk6"]
 [ext_resource type="PackedScene" uid="uid://c57jl273lxwj3" path="res://Background.tscn" id="8_3kg2f"]
 [ext_resource type="Shader" uid="uid://cu8a2b0v8lwf1" path="res://baseGameLevel.gdshader" id="8_davks"]
+[ext_resource type="PackedScene" uid="uid://bj2n6hj14qv1" path="res://clouds.tscn" id="11_l43w2"]
 [ext_resource type="Script" uid="uid://do2icfw4pxtnv" path="res://win_checkpoint.gd" id="12_sjpi1"]
 [ext_resource type="AudioStream" uid="uid://bb73tentdp2ac" path="res://Assets/Voices of Magic (no Vox).mp3" id="13_davks"]
 
@@ -2448,11 +2449,13 @@ text = "You now have the ability to double jump"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Parallax2D" parent="." instance=ExtResource("8_3kg2f")]
+[node name="Background" parent="." instance=ExtResource("8_3kg2f")]
 z_index = -1
 scale = Vector2(3.5, 3.5)
 scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-5840.0005, -3184)
+
+[node name="Clouds" parent="." instance=ExtResource("11_l43w2")]
 
 [node name="Platform 39" type="StaticBody2D" parent="."]
 position = Vector2(-2713, -5506)
