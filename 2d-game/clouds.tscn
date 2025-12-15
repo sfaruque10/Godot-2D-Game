@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bj2n6hj14qv1"]
 
-[ext_resource type="Texture2D" path="res://Assets/cloud_transparent.png" id="1_4xwbv"]
+[ext_resource type="Texture2D" uid="uid://bt68m0yprghj6" path="res://Assets/cloud_transparent.png" id="1_4xwbv"]
 
 [node name="Clouds" type="Parallax2D"]
 z_index = -1
