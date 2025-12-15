@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=4 uid="uid://dlncbqssqv1kr"]
+[gd_scene load_steps=50 format=4 uid="uid://dlncbqssqv1kr"]
 
 [ext_resource type="PackedScene" uid="uid://bcqmq31y4hd2e" path="res://PlayerCommands.tscn" id="1_aevuf"]
 [ext_resource type="PackedScene" uid="uid://dtqiwfgfbnvf0" path="res://player.tscn" id="1_atsvf"]
@@ -11,7 +11,6 @@
 [ext_resource type="FontFile" uid="uid://cqe6t56011gww" path="res://Assets/cardinal/Cardinal.ttf" id="7_uvsk6"]
 [ext_resource type="PackedScene" uid="uid://c57jl273lxwj3" path="res://Background.tscn" id="8_3kg2f"]
 [ext_resource type="Shader" uid="uid://cu8a2b0v8lwf1" path="res://baseGameLevel.gdshader" id="8_davks"]
-[ext_resource type="Texture2D" uid="uid://bkidrslyd25dy" path="res://Assets/cloud_transparent.png" id="11_l43w2"]
 [ext_resource type="Script" uid="uid://do2icfw4pxtnv" path="res://win_checkpoint.gd" id="12_sjpi1"]
 [ext_resource type="AudioStream" uid="uid://bh2s8kdbk0sdm" path="res://Assets/Thats_Life_2008_Remastered.mp3" id="13_davks"]
 
@@ -2410,19 +2409,6 @@ z_index = -1
 scale = Vector2(3.5, 3.5)
 scroll_scale = Vector2(0.1, 0.1)
 scroll_offset = Vector2(-5807.0005, -3171)
-
-[node name="Clouds" type="Parallax2D" parent="."]
-z_index = -1
-scroll_scale = Vector2(0.2, 0)
-repeat_size = Vector2(1448, 872)
-autoscroll = Vector2(50, 0)
-repeat_times = 10
-ignore_camera_scroll = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Clouds"]
-position = Vector2(0, -5000)
-scale = Vector2(2, 2)
-texture = ExtResource("11_l43w2")
 
 [node name="Platform 39" type="StaticBody2D" parent="."]
 position = Vector2(-2713, -5506)

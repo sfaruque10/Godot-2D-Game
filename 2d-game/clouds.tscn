@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbpf5u6557rgi"]
+
+[ext_resource type="Texture2D" uid="uid://bkidrslyd25dy" path="res://Assets/cloud_transparent.png" id="1_4xwbv"]
+
+[node name="Clouds" type="Parallax2D"]
+z_index = -1
+scroll_scale = Vector2(0.2, 0)
+repeat_size = Vector2(1448, 872)
+autoscroll = Vector2(50, 0)
+repeat_times = 10
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5000)
+scale = Vector2(2, 2)
+texture = ExtResource("1_4xwbv")
