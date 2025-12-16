@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://clvdmoxu4oya5" path="res://breaking_platform.gd" id="1_qpva8"]
 [ext_resource type="Texture2D" uid="uid://bugpsrokbi5an" path="res://Assets/tile.png" id="2_qpva8"]
-[ext_resource type="Texture2D" uid="uid://cff1k78h8ykb6" path="res://crack.png" id="3_7v57b"]
+[ext_resource type="Texture2D" uid="uid://cff1k78h8ykb6" path="res://Assets/crack.png" id="3_7v57b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qpva8"]
 size = Vector2(416, 80)

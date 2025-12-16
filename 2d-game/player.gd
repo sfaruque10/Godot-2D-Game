@@ -27,6 +27,8 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, target_speed, current_friction * delta)
 		
 		$AnimatedSprite2D.play("dash")
+		$Jump.stop()
+		$Dash.play()
 		velocity += external_force # add any force from environment
 		velocity.y = 0
 	else:
@@ -46,6 +48,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("jump") and jumps < Global.max_jumps:
 			velocity.y = -jump_force * Global.gravity_direction
 			jumps += 1 # increment number of jumps
+			$Jump.play()
 			
 		var direction = Input.get_axis("ui_left", "ui_right")
 		

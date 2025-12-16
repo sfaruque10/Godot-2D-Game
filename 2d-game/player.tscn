@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://dtqiwfgfbnvf0"]
+[gd_scene load_steps=41 format=3 uid="uid://dtqiwfgfbnvf0"]
 
 [ext_resource type="Script" uid="uid://badpr8whfw1x4" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bpvi3lfu530w" path="res://icon.svg" id="2_i3pqv"]
@@ -6,6 +6,8 @@
 [ext_resource type="AudioStream" uid="uid://clryminqvsvym" path="res://Assets/cartoonslip.mp3" id="4_hqtel"]
 [ext_resource type="Texture2D" uid="uid://pssshh5g806d" path="res://Assets/Trails/sprites/puffs-of-smoke.png" id="5_sweqy"]
 [ext_resource type="Script" uid="uid://b2q1lg4wn6ux2" path="res://addons/trail_2d/trail_2d.gd" id="6_2hs0m"]
+[ext_resource type="AudioStream" uid="uid://beiwkf20y8duc" path="res://Assets/action_jump.mp3" id="7_1jxqw"]
+[ext_resource type="AudioStream" uid="uid://dag8mlqw1mcyu" path="res://Assets/dash_sound.mp3" id="8_dw050"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_op7ga"]
 atlas = ExtResource("3_i3pqv")
@@ -306,5 +308,11 @@ joint_mode = 2
 script = ExtResource("6_2hs0m")
 length = 20
 metadata/_custom_type_script = "uid://b2q1lg4wn6ux2"
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_1jxqw")
+
+[node name="Dash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_dw050")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
