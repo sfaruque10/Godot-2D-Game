@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://bfibnmv2hk1jx" path="res://double_jump_checkpoint.gd" id="7_opwys"]
 [ext_resource type="FontFile" uid="uid://cqe6t56011gww" path="res://Assets/cardinal/Cardinal.ttf" id="7_uvsk6"]
 [ext_resource type="PackedScene" uid="uid://c57jl273lxwj3" path="res://Background.tscn" id="8_3kg2f"]
+[ext_resource type="Texture2D" uid="uid://cl5bl1g4lq6vc" path="res://Assets/dash_check.png" id="8_4iqk7"]
 [ext_resource type="Shader" uid="uid://cu8a2b0v8lwf1" path="res://baseGameLevel.gdshader" id="8_davks"]
 [ext_resource type="PackedScene" uid="uid://bnnha8ka7q4l2" path="res://clouds.tscn" id="11_l43w2"]
 [ext_resource type="Script" uid="uid://do2icfw4pxtnv" path="res://win_checkpoint.gd" id="12_sjpi1"]
@@ -1812,6 +1813,7 @@ offset_right = 352.0
 offset_bottom = -558.0
 
 [node name="Player" parent="." instance=ExtResource("1_atsvf")]
+z_index = 1
 position = Vector2(2, 36)
 
 [node name="Starting Platform" type="Area2D" parent="."]
@@ -2080,6 +2082,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_sjpi1")
 text = "You now have the ability to dash"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Dash Checkpoint"]
+position = Vector2(-84, 266)
+scale = Vector2(0.29288846, 0.29288846)
+texture = ExtResource("8_4iqk7")
 
 [node name="Platform 17" type="StaticBody2D" parent="."]
 position = Vector2(-1320, -1660)
