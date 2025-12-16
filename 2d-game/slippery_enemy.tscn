@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0sifxw5an1mi" path="res://Assets/snowman.png" id="2_5lclq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1nm4i"]
-size = Vector2(412, 12)
+size = Vector2(416, 12)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lclq"]
 radius = 49.0
@@ -40,7 +40,7 @@ radius = 22.095152
 height = 46.294605
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lclq"]
-size = Vector2(72, 12)
+size = Vector2(80, 12)
 
 [node name="Slippery_Enemy" type="CharacterBody2D"]
 script = ExtResource("1_5lclq")
@@ -54,13 +54,13 @@ texture = ExtResource("2_5lclq")
 position = Vector2(1957, 261)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface"]
-position = Vector2(0, 72)
+position = Vector2(1, 72)
 shape = SubResource("RectangleShape2D_1nm4i")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface"]
-offset_left = -207.0
+offset_left = -215.0
 offset_top = 57.0
-offset_right = 205.0
+offset_right = 217.0
 offset_bottom = 83.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -87,52 +87,52 @@ shape = SubResource("CapsuleShape2D_f5sun")
 position = Vector2(2748, 806)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface2"]
-position = Vector2(1, 35)
+position = Vector2(2, 35)
 shape = SubResource("RectangleShape2D_1nm4i")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface2"]
-offset_left = -204.0
+offset_left = -206.0
 offset_top = 29.0
-offset_right = 207.0
+offset_right = 210.0
 offset_bottom = 53.0
 
 [node name="Slippery_Surface3" type="Area2D" parent="."]
 position = Vector2(1305, 76)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface3"]
-position = Vector2(-7, 35)
+position = Vector2(-3, 35)
 shape = SubResource("RectangleShape2D_5lclq")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface3"]
 offset_left = -43.0
 offset_top = 25.0
-offset_right = 29.0
+offset_right = 37.0
 offset_bottom = 46.0
 
 [node name="Slippery_Surface4" type="Area2D" parent="."]
 position = Vector2(662, 73)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface4"]
-position = Vector2(-3, 35)
+position = Vector2(0.5, 35)
 shape = SubResource("RectangleShape2D_5lclq")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface4"]
-offset_left = -31.0
+offset_left = -40.0
 offset_top = 25.0
-offset_right = 33.0
+offset_right = 40.0
 offset_bottom = 47.0
 
 [node name="Slippery_Surface5" type="Area2D" parent="."]
 position = Vector2(-7, 29)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Slippery_Surface5"]
-position = Vector2(1, 35)
+position = Vector2(4, 35)
 shape = SubResource("RectangleShape2D_1nm4i")
 
 [node name="ColorRect" type="ColorRect" parent="Slippery_Surface5"]
 offset_left = -204.0
-offset_top = 23.0
-offset_right = 207.0
+offset_top = 19.0
+offset_right = 213.0
 offset_bottom = 47.0
 
 [connection signal="body_entered" from="Slippery_Surface" to="." method="_on_body_entered"]
