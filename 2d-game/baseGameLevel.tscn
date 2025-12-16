@@ -2690,7 +2690,6 @@ shape = SubResource("RectangleShape2D_7ie2o")
 
 [node name="That\'s Life 2008 Remaster" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("13_davks")
-autoplay = true
 parameters/looping = true
 
 [node name="Platform 53" type="StaticBody2D" parent="."]
