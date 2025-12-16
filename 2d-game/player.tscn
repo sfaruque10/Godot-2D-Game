@@ -280,7 +280,7 @@ zoom = Vector2(0.75, 0.75)
 limit_left = -3228
 limit_top = -10480
 limit_right = 3239
-limit_bottom = 270
+limit_bottom = 250
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.3
