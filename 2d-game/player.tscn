@@ -1,9 +1,11 @@
-[gd_scene load_steps=32 format=3 uid="uid://dtqiwfgfbnvf0"]
+[gd_scene load_steps=39 format=3 uid="uid://dtqiwfgfbnvf0"]
 
 [ext_resource type="Script" uid="uid://badpr8whfw1x4" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bpvi3lfu530w" path="res://icon.svg" id="2_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://cyberfehushc" path="res://Assets/Animation Sprites/AnimationSheet_Character.png" id="3_i3pqv"]
 [ext_resource type="AudioStream" uid="uid://clryminqvsvym" path="res://Assets/cartoonslip.mp3" id="4_hqtel"]
+[ext_resource type="Texture2D" uid="uid://pssshh5g806d" path="res://Assets/Trails/sprites/puffs-of-smoke.png" id="5_sweqy"]
+[ext_resource type="Script" uid="uid://b2q1lg4wn6ux2" path="res://addons/trail_2d/trail_2d.gd" id="6_2hs0m"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_op7ga"]
 atlas = ExtResource("3_i3pqv")
@@ -217,6 +219,44 @@ animations = [{
 radius = 38.333332
 height = 121.66666
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_2hs0m"]
+particles_animation = true
+particles_anim_h_frames = 5
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_sweqy"]
+colors = PackedColorArray(0, 0, 0, 1, 0.5447105, 0.033127263, 0.21964803, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_2hs0m"]
+gradient = SubResource("Gradient_sweqy")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_1jxqw"]
+lifetime_randomness = 0.4
+particle_flag_disable_z = true
+emission_shape_scale = Vector3(5, 5, 5)
+emission_shape = 1
+emission_sphere_radius = 10.0
+angle_min = 1.0728835e-05
+angle_max = 360.00003
+direction = Vector3(-1, 0, 0)
+spread = 20.0
+initial_velocity_min = 50.0
+initial_velocity_max = 90.0
+gravity = Vector3(0, 0, 0)
+damping_min = 15.000001
+damping_max = 20.0
+scale_min = 0.5
+scale_max = 1.5
+color = Color(1, 1, 1, 0.78431374)
+color_ramp = SubResource("GradientTexture1D_2hs0m")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+
+[sub_resource type="Gradient" id="Gradient_2hs0m"]
+offsets = PackedFloat32Array(0.510274, 1)
+colors = PackedColorArray(0.5372549, 0.07058824, 0.14509805, 1, 0.5372549, 0.07058824, 0.14509805, 0)
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(1.1, 1.1)
 script = ExtResource("1_onrkg")
@@ -248,5 +288,23 @@ one_shot = true
 
 [node name="Slip" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_hqtel")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+visible = false
+z_index = -1
+material = SubResource("CanvasItemMaterial_2hs0m")
+position = Vector2(-33.636364, 16.363636)
+texture = ExtResource("5_sweqy")
+process_material = SubResource("ParticleProcessMaterial_1jxqw")
+
+[node name="Trail2D" type="Line2D" parent="."]
+z_index = -1
+width = 100.0
+default_color = Color(0.5372549, 0.07058824, 0.14509805, 1)
+gradient = SubResource("Gradient_2hs0m")
+joint_mode = 2
+script = ExtResource("6_2hs0m")
+length = 20
+metadata/_custom_type_script = "uid://b2q1lg4wn6ux2"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
