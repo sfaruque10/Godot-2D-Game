@@ -299,7 +299,7 @@ process_material = SubResource("ParticleProcessMaterial_1jxqw")
 
 [node name="Trail2D" type="Line2D" parent="."]
 z_index = -1
-width = 100.0
+width = 40.0
 default_color = Color(0.5372549, 0.07058824, 0.14509805, 1)
 gradient = SubResource("Gradient_2hs0m")
 joint_mode = 2
