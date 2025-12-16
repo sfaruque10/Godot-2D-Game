@@ -23,6 +23,10 @@ Global="*res://global.gd"
 
 window/size/mode=2
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/trail_2d/plugin.cfg")
+
 [global_group]
 
 Negative_Gravity=""
