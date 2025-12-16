@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj2n6hj14qv1"]
+[gd_scene load_steps=5 format=3 uid="uid://bnnha8ka7q4l2"]
 
 [ext_resource type="Texture2D" uid="uid://cen8qxbauxwdy" path="res://Assets/Clouds/Clouds.png" id="1_bs8eb"]
 [ext_resource type="Texture2D" uid="uid://ol1xkxa8by7h" path="res://Assets/Clouds/Clouds2.png" id="2_x36bk"]
@@ -14,21 +14,21 @@ repeat_times = 6
 ignore_camera_scroll = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-1000, -7000)
-scale = Vector2(3, 3)
+position = Vector2(2592, -6336)
+scale = Vector2(10, 5)
 texture = ExtResource("1_bs8eb")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(-3000, -7500)
-scale = Vector2(3, 3)
+position = Vector2(-3040.0002, -6736.0005)
+scale = Vector2(10, 5)
 texture = ExtResource("2_x36bk")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(-2000, -7900)
-scale = Vector2(3, 3)
+position = Vector2(-2112, -5744)
+scale = Vector2(10, 5)
 texture = ExtResource("3_o0mjc")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(-4000, -8000)
-scale = Vector2(3, 3)
+position = Vector2(-2976.0002, -7776)
+scale = Vector2(10, 5)
 texture = ExtResource("4_ygvev")
