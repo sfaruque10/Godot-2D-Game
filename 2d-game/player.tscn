@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://pssshh5g806d" path="res://Assets/Trails/sprites/puffs-of-smoke.png" id="5_sweqy"]
 [ext_resource type="Script" uid="uid://b2q1lg4wn6ux2" path="res://addons/trail_2d/trail_2d.gd" id="6_2hs0m"]
 [ext_resource type="AudioStream" uid="uid://beiwkf20y8duc" path="res://Assets/action_jump.mp3" id="7_1jxqw"]
-[ext_resource type="AudioStream" uid="uid://dag8mlqw1mcyu" path="res://Assets/dash_sound.mp3" id="8_dw050"]
+[ext_resource type="AudioStream" uid="uid://bql1jcdu2shqj" path="res://Assets/simple-whoosh-382724.mp3" id="8_dw050"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_op7ga"]
 atlas = ExtResource("3_i3pqv")
