@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bb1lbkktqm77h" path="res://wind_enemy.tscn" id="3_q5v5t"]
 [ext_resource type="PackedScene" uid="uid://btvcl3jso720t" path="res://slippery_enemy.tscn" id="4_6hoih"]
 [ext_resource type="Script" uid="uid://b2dykq030im28" path="res://dash_checkpoint.gd" id="4_m7qo6"]
-[ext_resource type="PackedScene" path="res://fading_platform.tscn" id="6_ovxrf"]
+[ext_resource type="PackedScene" uid="uid://bvvav2o0veqc6" path="res://fading_platform.tscn" id="6_ovxrf"]
 [ext_resource type="Texture2D" uid="uid://dtoe8scrideve" path="res://Assets/EP_Tileset1_pack/Tileset/EP_Tileset1_black.png" id="6_t3wiy"]
 [ext_resource type="Script" uid="uid://bfibnmv2hk1jx" path="res://double_jump_checkpoint.gd" id="7_opwys"]
 [ext_resource type="FontFile" uid="uid://cqe6t56011gww" path="res://Assets/cardinal/Cardinal.ttf" id="7_uvsk6"]
@@ -2458,8 +2458,7 @@ animation = &"Flag"
 autoplay = "Flag"
 frame_progress = 0.95407516
 
-[node name="WinSound" type="AudioStreamPlayer2D" parent="WinCheckpoint"]
-position = Vector2(-4, 3)
+[node name="WinSound" type="AudioStreamPlayer" parent="WinCheckpoint"]
 stream = ExtResource("17_1g016")
 
 [node name="Boundary Top" type="StaticBody2D" parent="."]
